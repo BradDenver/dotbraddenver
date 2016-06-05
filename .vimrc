@@ -14,6 +14,7 @@ call plug#begin('~/dotbraddenver/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'altercation/vim-colors-solarized'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'rking/ag.vim'
 " Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -21,6 +22,7 @@ Plug 'scrooloose/syntastic'
 Plug 'pmsorhaindo/syntastic-local-eslint.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 call plug#end()
 
 syntax enable
@@ -32,7 +34,7 @@ let g:solarized_termcolors=16
 " prevent hangs on long lines
 set synmaxcol=250
 
-" set mouse=a
+set mouse=a
 
 " Gutter
 set number
