@@ -14,7 +14,7 @@ git config --global user.name "BradDenver”
 git config --global core.editor "$(which nvim)”
 git config --global push.default current
 
-# export EDITOR='vim -N -u ~/dotbraddenver/.vimrc'
+export EDITOR="$(which nvim)"
 
 # https://spin.atomicobject.com/2016/05/28/log-bash-history/
 [[ -d ~/.logs ]] || mkdir ~/.logs
