@@ -37,13 +37,10 @@ function g {
 }
 
 # load git completions
-_completion_loader git
-# assign git's completion function _git to gi
-complete -o bashdefault -o default -o nospace -F _git g
+# https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
+if [ -f ~/dotbraddenver/.git-completion.bash ]; then
+  source ~/dotbraddenver/.git-completion.bash
 
-# load git completions
-# if [ -f `brew --prefix`/etc/bash_completion ]; then
-#   . `brew --prefix`/etc/bash_completion
-# fi
-# complete -o default -o nospace -F _git g
-
+  # assign git's completion function _git to g
+  complete -o default -o nospace -F _git g
+fi
