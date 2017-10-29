@@ -33,3 +33,8 @@ fi
 
 # https://stackoverflow.com/questions/4188324/bash-completion-of-makefile-target
 complete -W "\`grep -oE '^[a-zA-Z0-9_-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_-]*$//'\`" make
+
+# owen.cymru/fzf-ripgrep-navigate-with-bash-faster-than-ever-before/
+if command -v bfs >/dev/null 2>&1; then
+  export FZF_ALT_C_COMMAND="cd ~/; bfs -type d -nohidden | sed s/^\./~/"
+fi
