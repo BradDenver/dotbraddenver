@@ -10,8 +10,8 @@ git config --global alias.ci 'commit -vp'
 git config --global alias.st status
 git config --global alias.br branch
 git config --global user.email "brad.denver@gmail.com"
-git config --global user.name "BradDenver”
-git config --global core.editor "$(which nvim)”
+git config --global user.name "BradDenver"
+git config --global core.editor "$(which nvim)"
 git config --global push.default current
 
 export EDITOR="$(which nvim)"

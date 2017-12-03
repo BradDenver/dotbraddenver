@@ -42,5 +42,6 @@ if [ -f ~/dotbraddenver/.git-completion.bash ]; then
   source ~/dotbraddenver/.git-completion.bash
 
   # assign git's completion function _git to g
-  complete -o default -o nospace -F _git g
+  # complete -o default -o nospace -F _git g
+  complete -o bashdefault -o default -o nospace -F _git g
 fi
