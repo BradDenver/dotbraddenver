@@ -1,0 +1,7 @@
+/api/public/webpack/*
+/client/elm-stuff/*
+/client/elm-tests/elm-stuff/*
+
+/* punters  */
+/api/getOdds*
+/pages/https:*

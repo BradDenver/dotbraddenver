@@ -45,3 +45,8 @@ if [ -f ~/dotbraddenver/.git-completion.bash ]; then
   # complete -o default -o nospace -F _git g
   complete -o bashdefault -o default -o nospace -F _git g
 fi
+
+#https://github.com/ggreer/the_silver_searcher/wiki/Advanced-Usage
+if [ -f ~/dotbraddenver/.ignore ]; then
+  alias ag='ag --path-to-ignore ~/dotbraddenver/.ignore'
+fi
