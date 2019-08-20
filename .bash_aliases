@@ -49,4 +49,5 @@ fi
 #https://github.com/ggreer/the_silver_searcher/wiki/Advanced-Usage
 if [ -f ~/dotbraddenver/.ignore ]; then
   alias ag='ag --path-to-ignore ~/dotbraddenver/.ignore'
+  alias rg='rg --ignore-file ~/dotbraddenver/.ignore'
 fi

@@ -34,7 +34,9 @@ fi
 # https://stackoverflow.com/questions/4188324/bash-completion-of-makefile-target
 complete -W "\`grep -oE '^[a-zA-Z0-9_-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_-]*$//'\`" make
 
-export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
+# export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
+# https://sidneyliebrand.io/blog/how-fzf-and-ripgrep-improved-my-workflow
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden --ignore-file ~/dotbraddenver/.ignore'
 
 # owen.cymru/fzf-ripgrep-navigate-with-bash-faster-than-ever-before/
 if command -v bfs >/dev/null 2>&1; then

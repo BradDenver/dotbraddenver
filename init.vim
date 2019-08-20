@@ -57,7 +57,8 @@ nnoremap <leader>pm :set invpaste paste?<CR>
 set pastetoggle=<leader>pm
 set showmode
 
-let g:ag_prg="ag --path-to-ignore ~/dotbraddenver/.ignore --vimgrep"
+" let g:ag_prg="ag --path-to-ignore ~/dotbraddenver/.ignore --vimgrep"
+let g:ag_prg="rg --vimgrep"
 
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
