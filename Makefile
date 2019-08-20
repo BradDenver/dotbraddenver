@@ -14,6 +14,7 @@ endif
 
 brew:
 	brew install \
+		ripgrep \
 		tavianator/tap/bfs 	\
 		the_silver_searcher	\
 		z
