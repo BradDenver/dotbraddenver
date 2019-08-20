@@ -40,3 +40,7 @@ export FZF_DEFAULT_COMMAND='ag --nocolor --ignore node_modules -g ""'
 if command -v bfs >/dev/null 2>&1; then
   export FZF_ALT_C_COMMAND="cd ~/; bfs -type d -nohidden | sed s/^\./~/"
 fi
+
+if ! [ -f ~/.config/nvim/init.vim ]; then
+  ln -s ~/dotbraddenver/init.vim ~/.config/nvim/init.vim
+fi
