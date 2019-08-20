@@ -44,3 +44,5 @@ fi
 if ! [ -f ~/.config/nvim/init.vim ]; then
   ln -s ~/dotbraddenver/init.vim ~/.config/nvim/init.vim
 fi
+
+eval "$(direnv hook bash)"
