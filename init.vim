@@ -6,6 +6,7 @@ Plug 'elmcast/elm-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
+Plug 'leafgarland/typescript-vim'
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
