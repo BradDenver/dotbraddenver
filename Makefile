@@ -18,3 +18,8 @@ brew:
 		tavianator/tap/bfs 	\
 		the_silver_searcher	\
 		z
+
+hammerspoon-spaces:
+	git clone https://github.com/asmagill/hs._asm.undocumented.spaces spaces
+	cd spaces
+	make install
