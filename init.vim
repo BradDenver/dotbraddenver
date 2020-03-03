@@ -1,12 +1,15 @@
 call plug#begin()
 " Plug 'altercation/vim-colors-solarized'
+Plug 'andys8/vim-elm-syntax'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh'}
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'elmcast/elm-vim'
+Plug 'elm-tooling/elm-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -70,21 +73,25 @@ let g:airline#extensions#tabline#show_buffers = 0
 
 " let g:ale_completion_enabled = 1
 let g:ale_completion_enabled = 0
-let g:ale_elm_format_use_global =1
-let g:ale_elm_make_use_global =1
+" let g:ale_linters = { 'elm': ['elm_ls'] }
 let g:airline#extensions#ale#enabled = 1
 
 let g:deoplete#enable_at_startup = 1
 " let g:deoplete#enable_at_startup = 0
 
 let g:elm_setup_keybindings = 0
+  
+let g:elm_format_autosave = 1
 
+let g:LanguageClient_rootMarkers = {
+  \ 'elm': ['elm.json'],
+  \ }
 let g:LanguageClient_serverCommands = {
     \ 'reason': ['~/dotbraddenver/reason-language-server.exe'],
     \ 'ocaml': ['ocaml-language-server', '--stdio'],
     \ }
 " \ 'reason': ['ocaml-language-server', '--stdio'],
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<cr>
+" nnoremap <silent> gd :call LanguageClient_textDocument_definition()<cr>
 nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<cr>
 nnoremap <silent> <cr> :call LanguageClient_textDocument_hover()<cr>
 
@@ -108,3 +115,25 @@ highlight TermCursor ctermfg=red guifg=red
 tnoremap <Esc> <C-\><C-n>
 
 :au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+
+let g:ale_fixers = {
+\   'css': ['prettier'],
+\   'elm': ['elm-format', 'trim_whitespace'],
+\   'javascript': ['prettier'],
+\   'javascriptreact': ['prettier'],
+\   'yaml': ['prettier'],
+\}
+
+
+" fix files automatically on save.
+" This is off by default.
+let g:ale_fix_on_save = 1
+let g:ale_lint_on_save = 1
+
+" https://github.com/leojpod/dotfiles/blob/master/nvim-config/configs/tools/coc.vim
+nmap <silent> gp <Plug>(coc-diagnostic-prev)
+nmap <silent> gn <Plug>(coc-diagnostic-next)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <leader>ac  <Plug>(coc-codeaction)
+nmap <leader>qf  <Plug>(coc-fix-current)<Paste>
