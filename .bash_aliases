@@ -51,3 +51,7 @@ if [ -f ~/dotbraddenver/.ignore ]; then
   alias ag='ag --path-to-ignore ~/dotbraddenver/.ignore'
   alias rg='rg --ignore-file ~/dotbraddenver/.ignore'
 fi
+
+function gbrd() {
+  git branch -d $(git branch | grep "$@")
+}
