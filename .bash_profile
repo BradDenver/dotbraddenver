@@ -48,3 +48,5 @@ if ! [ -f ~/.config/nvim/init.vim ]; then
 fi
 
 eval "$(direnv hook bash)"
+
+export PATH="/Users/braddenver/Library/Python/2.7/bin:$PATH"
