@@ -1,4 +1,5 @@
 alias be='bundle exec'
+alias gz='git fuzzy status'
 alias dc="docker-compose"
 alias l='ls -Al'
 alias v="vim"

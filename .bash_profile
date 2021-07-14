@@ -1,15 +1,22 @@
-
+# Load the shell dotfiles, and then some:
+# * ~/.path can be used to extend `$PATH`.
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/dotbraddenver/.{path,bash_prompt,exports,bash_aliases,functions,extra}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
 # Alias definitions.
-if [ -f ~/dotbraddenver/.bash_aliases ]; then
-    . ~/dotbraddenver/.bash_aliases
-fi
+# if [ -f ~/dotbraddenver/.bash_aliases ]; then
+#     . ~/dotbraddenver/.bash_aliases
+# fi
 
 # Git
 git config --global alias.co checkout
 git config --global alias.ci 'commit -vp'
 git config --global alias.st status
 git config --global alias.br branch
-git config --global user.email "brad.denver@gmail.com"
+# git config --global user.email "brad.denver@gmail.com"
+git config --global user.email "brad@stax.io"
 git config --global user.name "BradDenver"
 git config --global core.editor "$(which nvim)"
 git config --global push.default current
@@ -23,7 +30,7 @@ export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:
 [[ -d ~/.npm-global ]] || mkdir ~/.npm-global
 export PATH=~/.npm-global/bin:$PATH
 
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+# PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
 
 # Move next only if `homebrew` is installed
 if command -v brew >/dev/null 2>&1; then
@@ -50,3 +57,4 @@ fi
 eval "$(direnv hook bash)"
 
 export PATH="/Users/braddenver/Library/Python/2.7/bin:$PATH"
+export PATH="/Users/braddenver/dotbraddenver/git-fuzzy/bin:$PATH"

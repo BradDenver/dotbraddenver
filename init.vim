@@ -10,7 +10,8 @@ Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'reasonml-editor/vim-reason-plus'
+" Plug 'reasonml-editor/vim-reason-plus'
+Plug 'rescript-lang/vim-rescript'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -78,6 +79,8 @@ let g:airline#extensions#ale#enabled = 1
 
 let g:deoplete#enable_at_startup = 1
 " let g:deoplete#enable_at_startup = 0
+" https://github.com/carlitux/deoplete-ternjs/issues/88
+call deoplete#custom#option('num_processes', 4)
 
 let g:elm_setup_keybindings = 0
   
@@ -121,6 +124,8 @@ let g:ale_fixers = {
 \   'elm': ['elm-format', 'trim_whitespace'],
 \   'javascript': ['prettier'],
 \   'javascriptreact': ['prettier'],
+\   'typescript': ['prettier'],
+\   'typescriptreact': ['prettier'],
 \   'yaml': ['prettier'],
 \}
 
@@ -137,3 +142,5 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)<Paste>
+
+nnoremap <Leader>sv :source $MYVIMRC<CR>

@@ -19,6 +19,10 @@ brew:
 		the_silver_searcher	\
 		z
 
+git-fuzzy:
+	git clone https://github.com/bigH/git-fuzzy.git
+	echo "export PATH=\"$(pwd)/git-fuzzy/bin:\$PATH\"" >> .bash_profile
+
 hammerspoon-spaces:
 	git clone https://github.com/asmagill/hs._asm.undocumented.spaces spaces
 	cd spaces
