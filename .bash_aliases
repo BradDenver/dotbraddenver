@@ -4,6 +4,8 @@ alias dc="docker-compose"
 alias l='ls -Al'
 alias v="vim"
 alias va="vagrant"
+alias lg="lazygit"
+alias p="pnpm"
 
 
 # FUNCTIONS
