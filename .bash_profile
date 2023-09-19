@@ -11,17 +11,21 @@ unset file;
 # fi
 
 # Git
+git config --global alias.br branch
 git config --global alias.co checkout
 git config --global alias.ci 'commit -vp'
+git config --global alias.pl 'pull -p'
 git config --global alias.st status
-git config --global alias.br branch
 # git config --global user.email "brad.denver@gmail.com"
 git config --global user.email "brad@stax.io"
 git config --global user.name "BradDenver"
-git config --global core.editor "$(which nvim)"
+# git config --global core.editor "$(which nvim)"
+git config --global core.editor "/opt/homebrew/bin/nvim"
 git config --global push.default current
+git config --global --add --bool push.autoSetupRemote true
 
-export EDITOR="$(which nvim)"
+# export EDITOR="$(which nvim)"
+export EDITOR="/opt/homebrew/bin/nvim"
 
 # https://spin.atomicobject.com/2016/05/28/log-bash-history/
 [[ -d ~/.logs ]] || mkdir ~/.logs
@@ -50,11 +54,27 @@ if command -v bfs >/dev/null 2>&1; then
   export FZF_ALT_C_COMMAND="cd ~/; bfs -type d -nohidden | sed s/^\./~/"
 fi
 
-if ! [ -f ~/.config/nvim/init.vim ]; then
-  ln -s ~/dotbraddenver/init.vim ~/.config/nvim/init.vim
+# if ! [ -f ~/.config/nvim/init.vim ]; then
+#   ln -s ~/dotbraddenver/init.vim ~/.config/nvim/init.vim
+# fi
+if ! [ -d ~/.config/nvim ]; then
+  ln -s ~/dotbraddenver/nvim ~/.config/nvim
 fi
 
 eval "$(direnv hook bash)"
 
 export PATH="/Users/braddenver/Library/Python/2.7/bin:$PATH"
 export PATH="/Users/braddenver/dotbraddenver/git-fuzzy/bin:$PATH"
+
+export NPM_TOKEN=***REMOVED***
+# export NPM_TOKEN=***REMOVED***
+
+export GOPRIVATE=github.com/jumacloud
+git config --global url.git@github.com:jumacloud.insteadOf https://github.com/jumacloud
+
+export OPENAI_API_KEY=***REMOVED***
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
