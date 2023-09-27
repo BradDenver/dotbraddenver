@@ -13,11 +13,13 @@ ifeq ($(shell which bfs),)
 endif
 
 brew:
-	brew install \
-		ripgrep \
-		tavianator/tap/bfs 	\
-		the_silver_searcher	\
-		z
+	brew tap Homebrew/bundle
+	brew bundle
+	# brew install \
+	# 	ripgrep \
+	# 	tavianator/tap/bfs 	\
+	# 	the_silver_searcher	\
+	# 	z
 
 git-fuzzy:
 	git clone https://github.com/bigH/git-fuzzy.git
