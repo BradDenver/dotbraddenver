@@ -30,7 +30,7 @@ append_line() {
   set +e
 }
 
-update_bashrc() {
-  append_line 1 "[ -f ~/dotbraddenver/.bash_profile ] && source ~/dotbraddenver/.bash_profile" ~/.bashrc
+update_zprofile() {
+  append_line 1 "[ -f ~/dotbraddenver/.zprofile ] && source ~/dotbraddenver/.zprofile" ~/.zprofile
 }
-update_bashrc
+update_zprofile
